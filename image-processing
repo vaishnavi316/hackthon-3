@@ -10,18 +10,17 @@ from google.colab.patches import cv2_imshow
 from skimage import io
 from PIL import Image
 import os
-import os.path
 import PIL
 import glob
 import matplotlib.pyplot as plt
-urls=["boy-1.jpg","girl-1.jpg","woman-1.jpg","men-1.jpg"]
+urls=["boy-1.jpg","flower-1.jpg","girl-1.jpg","woman-1.jpg","men-1.jpg","parrot-1.jpg"]
 for url in urls:
   image=io.imread(url)
   image_2=cv.cvtColor(image,cv.COLOR_BGR2RGB)
   final_frame=cv.hconcat((image,image_2))
   cv2_imshow(final_frame)
   print('\n')
-folder_images="images-1"
+folder_images="images-2"
 size_images=dict()
 for dirpath,_,filenames in os.walk(folder_images):
   for path_image in filenames:
@@ -30,4 +29,3 @@ for dirpath,_,filenames in os.walk(folder_images):
       width,height=img.size
       size_images[path_image]={'width':width,'height':height}
 print(size_images)
-
