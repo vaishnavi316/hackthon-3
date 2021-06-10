@@ -1,0 +1,33 @@
+!git clone https://github.com/vaishnavi316/hackthon-3.git
+%cd hackthon-3/
+from IPython.display import clear_output
+clear_output()
+
+import cv2 as cv
+import numpy as np
+import pandas as pd
+from google.colab.patches import cv2_imshow
+from skimage import io
+from PIL import Image
+import os
+import os.path
+import PIL
+import glob
+import matplotlib.pyplot as plt
+urls=["boy-1.jpg","girl-1.jpg","woman-1.jpg","men-1.jpg"]
+for url in urls:
+  image=io.imread(url)
+  image_2=cv.cvtColor(image,cv.COLOR_BGR2RGB)
+  final_frame=cv.hconcat((image,image_2))
+  cv2_imshow(final_frame)
+  print('\n')
+folder_images="images-1"
+size_images=dict()
+for dirpath,_,filenames in os.walk(folder_images):
+  for path_image in filenames:
+    image=os.path.abspath(os.path.join(dirpath,path_image))
+    with Image.open(image) as img:
+      width,height=img.size
+      size_images[path_image]={'width':width,'height':height}
+print(size_images)
+
