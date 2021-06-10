@@ -10,7 +10,7 @@ from google.colab.patches import cv2_imshow
 from PIL import Image
 from skimage import io
 import PIL
-import matplotlib.pyplot as plt
+import matplotlib.pylab as plt
 urls=["boy-1.jpg","flower-1.jpg","girl-1.jpg","woman-1.jpg","men-1.jpg","parrot-1.jpg"]
 for url in urls:
   image=io.imread(url)
