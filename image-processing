@@ -7,12 +7,9 @@ import cv2 as cv
 import numpy as np
 import pandas as pd
 from google.colab.patches import cv2_imshow
-from skimage import io
 from PIL import Image
-import os.path
-import os
+from skimage import io
 import PIL
-import glob
 import matplotlib.pyplot as plt
 urls=["boy-1.jpg","flower-1.jpg","girl-1.jpg","woman-1.jpg","men-1.jpg","parrot-1.jpg"]
 for url in urls:
@@ -21,3 +18,5 @@ for url in urls:
   final_frame=cv.hconcat((image,image_2))
   cv2_imshow(final_frame)
   print('\n')
+
+
